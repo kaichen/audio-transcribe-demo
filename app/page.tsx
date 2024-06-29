@@ -7,6 +7,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Alert, AlertDescription } from '@/components/ui/alert';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
+import Link from 'next/link';
 
 // 更新类型定义
 type AudioChunk = Blob;
@@ -124,6 +125,7 @@ const VoiceToText: React.FC = () => {
             value={apiKey}
             onChange={(e) => setApiKey(e.target.value)}
           />
+          <p className='text-xs text-slate-500'>Get keys from <Link href="https://console.groq.com/keys" className='text-blue-500'>console.groq.com/keys</Link></p>
         </div>
         <div className="flex justify-center space-x-2">
           <Button onClick={startRecording} disabled={isRecording}>
